@@ -244,7 +244,7 @@ def sniff_packet(packet, ip, name):
 
     for pckt in catched_packtes:
         try:
-            packet_load = packet.getlayer(Raw).load
+            packet_load = pckt.getlayer(Raw).load
 
             if pckt.getlayer(IP).dst == ip and packet_load.decode(CODING) == msg:
                 print('Message -' + msg + '- was sent to ' + name)
